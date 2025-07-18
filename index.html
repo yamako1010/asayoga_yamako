@@ -148,73 +148,32 @@
     <!-- 1. 導入（ファーストビュー） -->
     <section class="hero" id="hero">
         <div class="hero-bg">
+            <div class="hero-bg-image"></div>
             <div class="hero-overlay"></div>
         </div>
         <div class="container">
             <div class="hero-content">
-                <div class="logo">
-                    <h1>ILM YOGA <span class="logo-sub">アイラブミー</span></h1>
+                <div class="logo hero-element-1">
+                    <h1>アイラブミー <span class="logo-sub">ILM YOGA</span></h1>
                 </div>
                 <div class="hero-message">
-                    <h2 class="main-catch">最近、心身ともに疲れてない？<br><span class="highlight">自分が一番大事だって思い出そう。</span></h2>
-                    <p class="sub-catch">あなたが笑顔になると、家族も笑顔になる。<br>最幸な朝時間を始めよう</p>
+                    <h2 class="main-catch hero-element-1">
+                        <span class="typing-text">最近、心身ともに疲れてない？</span><br>
+                        <span class="highlight-alt hero-element-2">自分が一番大事だって思い出そう。</span>
+                    </h2>
+                    <p class="sub-catch hero-element-2 floating">あなたが笑顔になると、家族も笑顔になる。<br><span class="highlight-text">最幸な朝時間を始めよう</span></p>
                 </div>
-                <div class="hero-info">
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
-                                    <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                    <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                    <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="1.5"/>
-                                </svg>
-                            </div>
-                            <div class="info-content">
-                                <span class="info-label">開催日</span>
-                                <span class="info-value">毎週土曜日</span>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
-                                    <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                            <div class="info-content">
-                                <span class="info-label">時間</span>
-                                <span class="info-value">朝6:45-7:15</span>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
-                                    <path d="M12 1V23M17 5H9.5C8.11929 5 7 6.11929 7 7.5C7 8.88071 8.11929 10 9.5 10H14.5C15.8807 10 17 11.1193 17 12.5C17 13.8807 15.8807 15 14.5 15H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="info-content">
-                                <span class="info-label">料金</span>
-                                <span class="info-value">月額3,800円</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="hero-cta hero-element-3">
+                    <a href="https://yamako1010.base.shop/items/113037492" class="cta-button" target="_blank">最幸な朝時間を始める</a>
                 </div>
-                <div class="hero-cta">
-                    <a href="https://yamako1010.base.shop/items/113037492" class="btn-primary" target="_blank">今すぐ申し込む</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <img src="asayoga.png" alt="温かい朝の光が差し込む部屋でヨガを楽しむ女性 - ILM YOGA オンライン朝ヨガの穏やかな雰囲気" class="hero-image" loading="eager">
             </div>
         </div>
         
         <!-- スクロール誘導ボタン -->
-        <div class="scroll-down-indicator">
+        <div class="scroll-down-indicator hero-element-3">
             <a href="#problems" class="scroll-down-btn">
-                <span class="scroll-text">詳しく見る</span>
-                <div class="scroll-arrow">
+                <span class="scroll-text">もっと見る</span>
+                <div class="scroll-arrow bounce-animation">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -348,13 +307,10 @@
     <!-- 5. やまこ講師紹介 -->
     <section class="instructor" id="instructor">
         <div class="container">
-            <h2 class="section-title">同じ経験をした講師だから安心</h2>
+            <h2 class="section-title">講師やまこの想い</h2>
             <div class="instructor-content">
                 <div class="instructor-photo">
-                    <div class="image-placeholder instructor-image">
-                        【講師写真】<br>
-                        やまこ先生の優しい笑顔の写真
-                    </div>
+                    <img src="instructor-photo.jpg" alt="講師やまこ先生の写真" class="instructor-image">
                 </div>
                 <div class="instructor-info">
                     <h3>やまこ</h3>
@@ -373,73 +329,93 @@
         </div>
     </section>
 
-    <!-- 6. サービス詳細 -->
-    <section class="service-details" id="service">
+    <!-- 生徒さんの声 -->
+    <section class="testimonials" id="testimonials">
         <div class="container">
-            <h2 class="section-title">ILM YOGA 詳細</h2>
-            <div class="service-grid">
-                <div class="service-item">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <h2 class="section-title">生徒さんの声</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"始める前は身体が重いのに、いつも終わるとスッキリします"</p>
+                    </div>
+                    <div class="testimonial-author">M.K さん（40代）</div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"疲れた時に、下向きの犬のポーズをしています。肩や脚の後ろ側が伸びてスッキリします。最近割と眠れるようになって、ヨガの効果が出ています"</p>
+                    </div>
+                    <div class="testimonial-author">A.S さん（30代）</div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"寝付く前にトイレに行ったり、暑いとか寒いとか感じずに寝れるようになりました"</p>
+                    </div>
+                    <div class="testimonial-author">T.H さん（50代）</div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"今朝は朝から血流が良くなり、主人のお弁当作り。今日の夜ご飯の下準備まで完了して出勤できました！"</p>
+                    </div>
+                    <div class="testimonial-author">R.Y さん（40代）</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. レッスン詳細 -->
+    <section class="lesson-details" id="service">
+        <div class="container">
+            <h2 class="section-title">レッスン詳細</h2>
+            <div class="lesson-cards">
+                <div class="lesson-card primary">
+                    <div class="lesson-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
                             <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                             <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                             <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="1.5"/>
                         </svg>
                     </div>
-                    <h4>毎週土曜日 AM6:45-7:15（30分）</h4>
+                    <h4>開催日時</h4>
+                    <p>毎週土曜日 6:45-7:15（30分）</p>
                 </div>
-                <div class="service-item">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="lesson-card primary">
+                    <div class="lesson-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
                             <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                         </svg>
                     </div>
-                    <h4>月額3,800円（月4-5回）</h4>
+                    <h4>料金</h4>
+                    <p>月額3,800円</p>
                 </div>
-                <div class="service-item">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="lesson-card primary">
+                    <div class="lesson-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
-                            <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="1.5"/>
-                            <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M8 21L12 17L16 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 17V21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                         </svg>
                     </div>
-                    <h4>Zoomオンライン</h4>
+                    <h4>参加方法</h4>
+                    <p>Zoomオンライン</p>
                 </div>
-                <div class="service-item">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M23 19C23 20.1046 22.1046 21 21 21H3C1.89543 21 1 20.1046 1 19V8C1 6.89543 1.89543 6 3 6H7L9 4H15L17 6H21C22.1046 6 23 6.89543 23 8V19Z" stroke="currentColor" stroke-width="1.5"/>
-                            <path d="M9 13L11 15L15 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <div class="lesson-card special">
+                    <div class="lesson-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="currentColor" fill-opacity="0.1"/>
                         </svg>
                     </div>
-                    <h4>カメラOFF参加OK</h4>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <polygon points="23,7 16,12 23,17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <rect x="1" y="5" width="15" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
-                        </svg>
-                    </div>
-                    <h4>アーカイブ配信付き</h4>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 21V19C16 16.7909 14.2091 15 12 15H5C2.79086 15 1 16.7909 1 19V21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="8.5" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/>
-                            <line x1="20" y1="8" x2="20" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                            <line x1="23" y1="11" x2="17" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h4>初心者・男性歓迎</h4>
+                    <h4>特典</h4>
+                    <ul class="lesson-benefits">
+                        <li>・カメラOFF参加OK</li>
+                        <li>・アーカイブ配信付き</li>
+                        <li>・初心者・男性歓迎</li>
+                    </ul>
                 </div>
             </div>
-            <div class="service-cta">
-                <a href="https://yamako1010.base.shop/items/113037492" class="btn-primary" target="_blank">お申し込みはこちら</a>
+            <div class="lesson-cta">
+                <a href="https://yamako1010.base.shop/items/113037492" class="cta-button" target="_blank">最幸な朝時間を始める</a>
             </div>
         </div>
     </section>
@@ -492,7 +468,7 @@
                 土曜日の朝30分から、新しい自分に出会いませんか？
             </p>
             <div class="final-cta-button">
-                <a href="https://yamako1010.base.shop/items/113037492" class="btn-primary large" target="_blank">最幸な朝時間を始める</a>
+                <a href="https://yamako1010.base.shop/items/113037492" class="cta-button" target="_blank">最幸な朝時間を始める</a>
             </div>
             <div class="contact-links">
                 <a href="https://lin.ee/B5oH6Gg" class="contact-link line" target="_blank">LINEでお問い合わせ</a>
