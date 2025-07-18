@@ -388,7 +388,20 @@ section {
 }
 
 .hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
     min-height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* スクロール誘導ボタン */
@@ -1008,6 +1021,12 @@ section {
     .scroll-arrow svg {
         width: 20px;
         height: 20px;
+    }
+    
+    .hero-image {
+        min-height: 250px;
+        max-height: 350px;
+        border-radius: 12px;
     }
 }
 
