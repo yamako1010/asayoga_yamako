@@ -22,7 +22,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
     
@@ -154,12 +154,12 @@
         <div class="container">
             <div class="hero-content">
                 <div class="logo hero-element-1">
-                    <h1>アイラブミー <span class="logo-sub">ILM YOGA</span></h1>
+                    <h1>ILM YOGA</h1>
                 </div>
                 <div class="hero-message">
                     <h2 class="main-catch hero-element-1">
                         <span class="typing-text">最近、心身ともに疲れてない？</span><br>
-                        <span class="highlight-alt hero-element-2">自分が一番大事だって思い出そう。</span>
+                        <span class="highlight-white hero-element-2">自分が一番大事だって思い出そう。</span>
                     </h2>
                     <p class="sub-catch hero-element-2 floating">あなたが笑顔になると、家族も笑顔になる。<br><span class="highlight-text">最幸な朝時間を始めよう</span></p>
                 </div>
@@ -254,8 +254,7 @@
                 <div class="benefit-item">
                     <div class="benefit-icon">
                         <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 3L13.09 8.26L18 9L14 14L15.18 21L12 17.77L8.82 21L10 14L6 9L10.91 8.26L12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                            <circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" stroke-opacity="0.3"/>
+                            <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="currentColor" fill-opacity="0.2"/>
                         </svg>
                     </div>
                     <h3>自分を大切にする習慣</h3>
@@ -298,6 +297,140 @@
                     <div class="feature-item">
                         <h4>心と体の調和</h4>
                         <p>内側から整えて、自然な美しさを引き出す</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 健康寿命カウントダウンタイマーツール -->
+    <section class="health-timer" id="health-timer">
+        <div class="container">
+            <h2 class="section-title">あなたの健康寿命、知っていますか？</h2>
+            <p class="health-timer-intro">
+                ここでは、あなたが健康な毎日を送るための時間を可視化し、<br>
+                未来を豊かにするヒントをお届けします。
+            </p>
+            
+            <div class="timer-content">
+                <!-- 入力フォーム -->
+                <div class="timer-form-container" id="timer-form-container">
+                    <div class="timer-form">
+                        <h3>さあ、あなたの時間を計ってみましょう</h3>
+                        <form id="health-form">
+                            <div class="form-group">
+                                <label for="birth-year">生年月日</label>
+                                <div class="date-inputs">
+                                    <select id="birth-year" name="birth-year">
+                                        <option value="">年</option>
+                                    </select>
+                                    <select id="birth-month" name="birth-month">
+                                        <option value="">月</option>
+                                    </select>
+                                    <select id="birth-day" name="birth-day">
+                                        <option value="">日</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>性別</label>
+                                <div class="gender-options">
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="male">
+                                        <span class="radio-custom"></span>
+                                        男性
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="gender" value="female">
+                                        <span class="radio-custom"></span>
+                                        女性
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>アドバイスのトーン</label>
+                                <div class="tone-options">
+                                    <label class="cup-option" data-tone="spicy">
+                                        <input type="radio" name="tone" value="spicy">
+                                        <div class="cup-icon spicy">
+                                            <div class="cup-body"></div>
+                                            <div class="cup-handle"></div>
+                                        </div>
+                                        <span>辛口</span>
+                                    </label>
+                                    <label class="cup-option" data-tone="medium">
+                                        <input type="radio" name="tone" value="medium">
+                                        <div class="cup-icon medium">
+                                            <div class="cup-body"></div>
+                                            <div class="cup-handle"></div>
+                                        </div>
+                                        <span>中辛</span>
+                                    </label>
+                                    <label class="cup-option" data-tone="mild">
+                                        <input type="radio" name="tone" value="mild">
+                                        <div class="cup-icon mild">
+                                            <div class="cup-body"></div>
+                                            <div class="cup-handle"></div>
+                                        </div>
+                                        <span>甘口</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="timer-button">健康寿命をチェック！</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- 結果表示 -->
+                <div class="timer-result-container" id="timer-result-container" style="display: none;">
+                    <div class="timer-result">
+                        <h3 id="result-title">あなたの健康寿命まで</h3>
+                        <div class="countdown-display" id="countdown-display">
+                            <div class="time-unit">
+                                <span class="time-value" id="years">0</span>
+                                <span class="time-label">年</span>
+                            </div>
+                            <div class="time-unit">
+                                <span class="time-value" id="days">0</span>
+                                <span class="time-label">日</span>
+                            </div>
+                            <div class="time-unit">
+                                <span class="time-value" id="hours">0</span>
+                                <span class="time-label">時間</span>
+                            </div>
+                            <div class="time-unit">
+                                <span class="time-value" id="minutes">0</span>
+                                <span class="time-label">分</span>
+                            </div>
+                            <div class="time-unit">
+                                <span class="time-value" id="seconds">0</span>
+                                <span class="time-label">秒</span>
+                            </div>
+                        </div>
+                        
+                        <div class="health-goals">
+                            <h4>健康なうちにやっておきたいこと</h4>
+                            <ul id="health-goals-list">
+                                <li>🍃 バランスの取れた食事習慣を身につける</li>
+                                <li>💪 適度な運動を継続する</li>
+                                <li>❤️ 大切な人との時間を大切にする</li>
+                                <li>🌟 新しいことにチャレンジする</li>
+                                <li>😊 ストレスを上手に管理する</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="advice-section">
+                            <h4>今日のあなたへのブレンドアドバイス</h4>
+                            <div class="advice-display" id="advice-display">
+                                <!-- アドバイスがここに表示される -->
+                            </div>
+                            <button class="advice-button" id="new-advice-btn">別のアドバイスを見る</button>
+                        </div>
+                        
+                        <button class="timer-button" id="back-to-form">もう一度チェックする</button>
                     </div>
                 </div>
             </div>
@@ -358,6 +491,9 @@
                     </div>
                     <div class="testimonial-author">R.Y さん（40代）</div>
                 </div>
+            </div>
+            <div class="testimonial-cta">
+                <a href="voices.html" class="cta-button">もっと声を聞く</a>
             </div>
         </div>
     </section>
@@ -518,5 +654,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="health-timer.js"></script>
 </body>
 </html>

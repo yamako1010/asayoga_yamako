@@ -13,6 +13,11 @@ body {
     color: #4a4a4a;
     background: linear-gradient(135deg, #fef9f3 0%, #fff5ee 100%);
     overflow-x: hidden;
+    caret-color: transparent;
+}
+
+* {
+    caret-color: transparent;
 }
 
 /* ========================================
@@ -208,12 +213,15 @@ section {
 
 .section-title {
     font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: #d4a574;
     text-align: center;
     margin-bottom: 3rem;
     position: relative;
-    font-weight: 500;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: titleFadeIn 0.8s ease-out forwards;
 }
 
 .section-title::after {
@@ -231,48 +239,33 @@ section {
 /* エレガントCTAボタン */
 .cta-button {
     display: inline-block;
-    padding: 18px 40px;
-    background: linear-gradient(135deg, #d4a574 0%, #f4c2a1 100%);
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
+    background-color: white;
+    color: #4a4a4a;
+    border: 2px solid #4a4a4a;
+    padding: 15px 35px;
     font-size: 1.1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(212, 165, 116, 0.3);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    font-weight: 500;
+    border-radius: 4px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Dancing Script', cursive;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 4px 0 rgba(74, 74, 74, 0.8);
     position: relative;
-    overflow: hidden;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-}
-
-.cta-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: left 0.5s;
-}
-
-.cta-button:hover::before {
-    left: 100%;
+    transform: translateY(0);
 }
 
 .cta-button:hover {
+    background-color: rgba(74, 74, 74, 0.05);
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(212, 165, 116, 0.5);
-    border-color: rgba(255, 255, 255, 0.4);
-    background: linear-gradient(135deg, #c29660 0%, #e6ad8c 100%);
+    box-shadow: 0 6px 0 rgba(74, 74, 74, 0.8);
 }
 
 .cta-button:active {
-    transform: translateY(0px);
-    box-shadow: 0 2px 15px rgba(212, 165, 116, 0.4);
+    transform: translateY(4px);
+    box-shadow: 0 0px 0 rgba(74, 74, 74, 0.8);
 }
 
 
@@ -454,9 +447,10 @@ section {
 
 .logo-sub {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 300;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 0.5rem;
 }
 
 .main-catch {
@@ -478,6 +472,12 @@ section {
     color: #f4c2a1;
     font-weight: 600;
     text-shadow: 0 2px 8px rgba(244, 194, 161, 0.5);
+}
+
+.highlight-white {
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .highlight-text {
@@ -591,7 +591,8 @@ section {
     font-size: 0.9rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
-    opacity: 0.8;
+    opacity: 1;
+    color: #555;
 }
 
 .scroll-arrow {
@@ -681,7 +682,7 @@ section {
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 }
 
@@ -892,9 +893,30 @@ section {
 }
 
 .testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    overflow-x: auto;
     gap: 2rem;
+    padding: 0 2rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.testimonial-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.testimonial-grid::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.testimonial-grid::-webkit-scrollbar-thumb {
+    background: #d4a574;
+    border-radius: 10px;
+}
+
+.testimonial-grid::-webkit-scrollbar-thumb:hover {
+    background: #b8956f;
 }
 
 .testimonial-item {
@@ -905,6 +927,8 @@ section {
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease;
     position: relative;
+    flex: 0 0 350px;
+    scroll-snap-align: start;
 }
 
 .testimonial-item:hover {
@@ -939,6 +963,11 @@ section {
     padding-top: 1rem;
 }
 
+.testimonial-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
 /* ========================================
    7. レッスン詳細セクション
 ======================================== */
@@ -956,13 +985,14 @@ section {
 
 .lesson-card {
     background: #fef9f3;
-    padding: 2.5rem 2rem;
-    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
     text-align: center;
     border: 2px solid #f4e6d7;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .lesson-card:hover {
@@ -1011,7 +1041,7 @@ section {
 }
 
 .lesson-card h4 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
     color: #d4a574;
     font-weight: 600;
@@ -1037,7 +1067,7 @@ section {
 
 .lesson-benefits {
     list-style: none;
-    text-align: left;
+    text-align: center;
     margin-top: 1rem;
 }
 
@@ -1050,6 +1080,394 @@ section {
 
 .lesson-cta {
     text-align: center;
+}
+
+/* ========================================
+   健康寿命カウントダウンタイマーツール
+======================================== */
+.health-timer {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f5f0e8 0%, #ede4d3 100%);
+    position: relative;
+}
+
+.health-timer-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #6a5d4f;
+    margin-bottom: 3rem;
+    line-height: 1.7;
+}
+
+.timer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* フォームスタイル */
+.timer-form-container {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e8ddd0;
+}
+
+.timer-form h3 {
+    color: #8b6f47;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    color: #6a5d4f;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+.date-inputs {
+    display: flex;
+    gap: 1rem;
+}
+
+.date-inputs select {
+    flex: 1;
+    padding: 0.8rem;
+    border: 2px solid #e8ddd0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #6a5d4f;
+    background: #faf8f5;
+    transition: all 0.3s ease;
+}
+
+.date-inputs select:focus {
+    outline: none;
+    border-color: #c9a876;
+    box-shadow: 0 0 0 3px rgba(201, 168, 118, 0.1);
+}
+
+.gender-options {
+    display: flex;
+    gap: 2rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #6a5d4f;
+    font-weight: 500;
+}
+
+.radio-label input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e8ddd0;
+    border-radius: 50%;
+    margin-right: 0.8rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom {
+    border-color: #c9a876;
+    background: #c9a876;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+/* カップアイコンスタイル */
+.tone-options {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.cup-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 2px solid transparent;
+}
+
+.cup-option:hover {
+    background: rgba(201, 168, 118, 0.1);
+    border-color: #c9a876;
+}
+
+.cup-option input[type="radio"] {
+    display: none;
+}
+
+.cup-option input[type="radio"]:checked ~ .cup-icon {
+    transform: scale(1.1);
+}
+
+.cup-option input[type="radio"]:checked ~ span {
+    color: #c9a876;
+    font-weight: 600;
+}
+
+.cup-icon {
+    position: relative;
+    width: 40px;
+    height: 45px;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.cup-body {
+    width: 35px;
+    height: 40px;
+    border-radius: 0 0 15px 15px;
+    position: relative;
+}
+
+.cup-handle {
+    position: absolute;
+    top: 8px;
+    right: -8px;
+    width: 8px;
+    height: 15px;
+    border: 2px solid;
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+}
+
+.cup-icon.spicy .cup-body {
+    background: linear-gradient(135deg, #8b4513 0%, #d2691e 100%);
+}
+
+.cup-icon.spicy .cup-handle {
+    border-color: #8b4513;
+}
+
+.cup-icon.medium .cup-body {
+    background: linear-gradient(135deg, #cd853f 0%, #f4a460 100%);
+}
+
+.cup-icon.medium .cup-handle {
+    border-color: #cd853f;
+}
+
+.cup-icon.mild .cup-body {
+    background: linear-gradient(135deg, #dda0dd 0%, #ffb6c1 100%);
+}
+
+.cup-icon.mild .cup-handle {
+    border-color: #dda0dd;
+}
+
+.cup-option span {
+    font-size: 0.9rem;
+    color: #6a5d4f;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.timer-button {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #c9a876 0%, #d4a574 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(201, 168, 118, 0.3);
+    font-family: 'Dancing Script', cursive;
+}
+
+.timer-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(201, 168, 118, 0.4);
+}
+
+/* 結果表示スタイル */
+.timer-result-container {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e8ddd0;
+    text-align: center;
+}
+
+.timer-result h3 {
+    color: #8b6f47;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.countdown-display {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f0e8 0%, #ede4d3 100%);
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+    border: 1px solid #e8ddd0;
+    min-width: 80px;
+}
+
+.time-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #8b6f47;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.5rem;
+}
+
+.time-label {
+    font-size: 0.9rem;
+    color: #6a5d4f;
+    font-weight: 500;
+}
+
+.health-goals {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.health-goals h4 {
+    color: #8b6f47;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.health-goals ul {
+    list-style: none;
+    padding: 0;
+}
+
+.health-goals li {
+    padding: 0.8rem 0;
+    font-size: 1rem;
+    color: #6a5d4f;
+    border-bottom: 1px solid rgba(232, 221, 208, 0.5);
+}
+
+.health-goals li:last-child {
+    border-bottom: none;
+}
+
+.advice-section {
+    margin-bottom: 2rem;
+}
+
+.advice-section h4 {
+    color: #8b6f47;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.advice-display {
+    background: linear-gradient(135deg, #f5f0e8 0%, #ede4d3 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid #c9a876;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #6a5d4f;
+    line-height: 1.7;
+}
+
+.advice-button {
+    background: #c9a876;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.advice-button:hover {
+    background: #b8956f;
+    transform: translateY(-1px);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .timer-form-container,
+    .timer-result-container {
+        padding: 2rem 1.5rem;
+    }
+    
+    .date-inputs {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .gender-options {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .tone-options {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .countdown-display {
+        gap: 1rem;
+    }
+    
+    .time-unit {
+        min-width: 60px;
+        padding: 1rem 0.5rem;
+    }
+    
+    .time-value {
+        font-size: 1.5rem;
+    }
+    
+    .health-goals {
+        text-align: center;
+    }
 }
 
 /* ========================================
@@ -1149,14 +1567,20 @@ section {
 }
 
 .final-cta .cta-button {
-    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-    color: #2c2c2c;
-    border-color: rgba(255, 255, 255, 0.5);
+    background-color: white;
+    color: #4a4a4a;
+    border: 2px solid #4a4a4a;
 }
 
 .final-cta .cta-button:hover {
-    transform: scale(1.05) translateY(-4px);
-    box-shadow: 0 12px 40px rgba(255, 215, 0, 0.8);
+    background-color: rgba(74, 74, 74, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 rgba(74, 74, 74, 0.8);
+}
+
+.final-cta .cta-button:active {
+    transform: translateY(4px);
+    box-shadow: 0 0px 0 rgba(74, 74, 74, 0.8);
 }
 
 .contact-links {
@@ -1193,15 +1617,18 @@ section {
    モバイル固定フッターボタン
 ======================================== */
 .mobile-footer-buttons {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
     background: white;
     display: flex;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    z-index: 99999 !important;
     display: none;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 .mobile-btn {
@@ -1257,6 +1684,11 @@ section {
     
     .section-title {
         font-size: 1.8rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 }
 
@@ -1351,6 +1783,12 @@ section {
         font-size: 1.1rem;
     }
     
+    .cta-button {
+        padding: 12px 28px;
+        font-size: 1rem;
+        letter-spacing: 0.03em;
+    }
+    
     .scroll-down-indicator {
         bottom: 20px;
     }
@@ -1429,6 +1867,18 @@ section {
 .problem-item, 
 .testimonial-item {
     animation: fadeInUp 0.6s ease-out;
+}
+
+/* H2タイトルアニメーション */
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* スクロールに応じたアニメーション用のクラス（JavaScriptで制御） */
